@@ -1,0 +1,25 @@
+{
+    "switches": [
+        {
+            "hostname": "SW-DIST-01",
+            "ip": "192.168.10.1",
+            "interface": "GigabitEthernet0/1",
+            "vlan": 100,
+            "description": "Link_Financeiro"
+        },
+        {
+            "hostname": "SW-DIST-02",
+            "ip": "192.168.10.2",
+            "interface": "GigabitEthernet0/5",
+            "vlan": 200,
+            "description": "Link_RH"
+        },
+        {
+            "hostname": "SW-CORE-01",
+            "ip": "192.168.10.10",
+            "interface": "TenGigabitEthernet1/1",
+            "vlan": 999,
+            "description": "Trunk_Backbone"
+        }
+    ]
+}
