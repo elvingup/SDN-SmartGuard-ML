@@ -1,0 +1,17 @@
+---
+inventory:
+  plugin: SimpleInventory      # O "Informante": Define como ler os dados
+  options:
+    host_file: "inventory/hosts.yaml"
+    group_file: "inventory/groups.yaml"
+    defaults_file: "inventory/defaults.yaml"
+
+runner:
+  plugin: threaded             # O "Músculo": Define a execução paralela
+  options:
+    num_workers: 20            # Quantos switches configurar ao mesmo tempo
+
+logging:
+  enabled: true
+  level: "DEBUG"
+  filename: "nornir.log"

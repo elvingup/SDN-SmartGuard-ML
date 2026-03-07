@@ -1,0 +1,4 @@
+switches_acesso:
+    platform: cisco_ios
+    data:
+        vlan: 100
