@@ -1,4 +1,8 @@
+# topology/inventory/groups.yaml
 switches_acesso:
-    platform: cisco_ios
+    platform: cisco_ios  # Mapeado do 'device_type' do seu script
+    username: admin      # Centralizado para gestão de segurança
+    password: password123
+    port: 22
     data:
-        vlan: 100
+        vlan_padrao: 10   # Inteligência de grupo
