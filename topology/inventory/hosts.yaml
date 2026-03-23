@@ -6,6 +6,8 @@ sw-acesso-001:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-002:
   hostname: 192.168.1.2
   groups:
@@ -14,6 +16,8 @@ sw-acesso-002:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-003:
   hostname: 192.168.1.3
   groups:
@@ -22,6 +26,8 @@ sw-acesso-003:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-004:
   hostname: 192.168.1.4
   groups:
@@ -30,6 +36,8 @@ sw-acesso-004:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-005:
   hostname: 192.168.1.5
   groups:
@@ -38,6 +46,8 @@ sw-acesso-005:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-006:
   hostname: 192.168.1.6
   groups:
@@ -46,6 +56,8 @@ sw-acesso-006:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-007:
   hostname: 192.168.1.7
   groups:
@@ -54,6 +66,8 @@ sw-acesso-007:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-008:
   hostname: 192.168.1.8
   groups:
@@ -62,6 +76,8 @@ sw-acesso-008:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-009:
   hostname: 192.168.1.9
   groups:
@@ -70,6 +86,8 @@ sw-acesso-009:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-010:
   hostname: 192.168.1.10
   groups:
@@ -78,6 +96,8 @@ sw-acesso-010:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-011:
   hostname: 192.168.1.11
   groups:
@@ -86,6 +106,8 @@ sw-acesso-011:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-012:
   hostname: 192.168.1.12
   groups:
@@ -94,6 +116,8 @@ sw-acesso-012:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-013:
   hostname: 192.168.1.13
   groups:
@@ -102,6 +126,8 @@ sw-acesso-013:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-014:
   hostname: 192.168.1.14
   groups:
@@ -110,6 +136,8 @@ sw-acesso-014:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-015:
   hostname: 192.168.1.15
   groups:
@@ -118,6 +146,8 @@ sw-acesso-015:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-016:
   hostname: 192.168.1.16
   groups:
@@ -126,6 +156,8 @@ sw-acesso-016:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-017:
   hostname: 192.168.1.17
   groups:
@@ -134,6 +166,8 @@ sw-acesso-017:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-018:
   hostname: 192.168.1.18
   groups:
@@ -142,6 +176,8 @@ sw-acesso-018:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-019:
   hostname: 192.168.1.19
   groups:
@@ -150,6 +186,8 @@ sw-acesso-019:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-020:
   hostname: 192.168.1.20
   groups:
@@ -158,6 +196,8 @@ sw-acesso-020:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-021:
   hostname: 192.168.1.21
   groups:
@@ -166,6 +206,8 @@ sw-acesso-021:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-022:
   hostname: 192.168.1.22
   groups:
@@ -174,6 +216,8 @@ sw-acesso-022:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-023:
   hostname: 192.168.1.23
   groups:
@@ -182,6 +226,8 @@ sw-acesso-023:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-024:
   hostname: 192.168.1.24
   groups:
@@ -190,6 +236,8 @@ sw-acesso-024:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-025:
   hostname: 192.168.1.25
   groups:
@@ -198,6 +246,8 @@ sw-acesso-025:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-026:
   hostname: 192.168.1.26
   groups:
@@ -206,6 +256,8 @@ sw-acesso-026:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-027:
   hostname: 192.168.1.27
   groups:
@@ -214,6 +266,8 @@ sw-acesso-027:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-028:
   hostname: 192.168.1.28
   groups:
@@ -222,6 +276,8 @@ sw-acesso-028:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-029:
   hostname: 192.168.1.29
   groups:
@@ -230,6 +286,8 @@ sw-acesso-029:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-030:
   hostname: 192.168.1.30
   groups:
@@ -238,6 +296,8 @@ sw-acesso-030:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-031:
   hostname: 192.168.1.31
   groups:
@@ -246,6 +306,8 @@ sw-acesso-031:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-032:
   hostname: 192.168.1.32
   groups:
@@ -254,6 +316,8 @@ sw-acesso-032:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-033:
   hostname: 192.168.1.33
   groups:
@@ -262,6 +326,8 @@ sw-acesso-033:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-034:
   hostname: 192.168.1.34
   groups:
@@ -270,6 +336,8 @@ sw-acesso-034:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-035:
   hostname: 192.168.1.35
   groups:
@@ -278,6 +346,8 @@ sw-acesso-035:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-036:
   hostname: 192.168.1.36
   groups:
@@ -286,6 +356,8 @@ sw-acesso-036:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-037:
   hostname: 192.168.1.37
   groups:
@@ -294,6 +366,8 @@ sw-acesso-037:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-038:
   hostname: 192.168.1.38
   groups:
@@ -302,6 +376,8 @@ sw-acesso-038:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-039:
   hostname: 192.168.1.39
   groups:
@@ -310,6 +386,8 @@ sw-acesso-039:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-040:
   hostname: 192.168.1.40
   groups:
@@ -318,6 +396,8 @@ sw-acesso-040:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-041:
   hostname: 192.168.1.41
   groups:
@@ -326,6 +406,8 @@ sw-acesso-041:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-042:
   hostname: 192.168.1.42
   groups:
@@ -334,6 +416,8 @@ sw-acesso-042:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-043:
   hostname: 192.168.1.43
   groups:
@@ -342,6 +426,8 @@ sw-acesso-043:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-044:
   hostname: 192.168.1.44
   groups:
@@ -350,6 +436,8 @@ sw-acesso-044:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-045:
   hostname: 192.168.1.45
   groups:
@@ -358,6 +446,8 @@ sw-acesso-045:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-046:
   hostname: 192.168.1.46
   groups:
@@ -366,6 +456,8 @@ sw-acesso-046:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-047:
   hostname: 192.168.1.47
   groups:
@@ -374,6 +466,8 @@ sw-acesso-047:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-048:
   hostname: 192.168.1.48
   groups:
@@ -382,6 +476,8 @@ sw-acesso-048:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-049:
   hostname: 192.168.1.49
   groups:
@@ -390,6 +486,8 @@ sw-acesso-049:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-050:
   hostname: 192.168.1.50
   groups:
@@ -398,6 +496,8 @@ sw-acesso-050:
     interface: GigabitEthernet0/1
     vlan: 10
     setor: Financeiro
+    telemetry_port: 50051
+    role: access
 sw-acesso-051:
   hostname: 192.168.1.51
   groups:
@@ -406,6 +506,8 @@ sw-acesso-051:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-052:
   hostname: 192.168.1.52
   groups:
@@ -414,6 +516,8 @@ sw-acesso-052:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-053:
   hostname: 192.168.1.53
   groups:
@@ -422,6 +526,8 @@ sw-acesso-053:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-054:
   hostname: 192.168.1.54
   groups:
@@ -430,6 +536,8 @@ sw-acesso-054:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-055:
   hostname: 192.168.1.55
   groups:
@@ -438,6 +546,8 @@ sw-acesso-055:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-056:
   hostname: 192.168.1.56
   groups:
@@ -446,6 +556,8 @@ sw-acesso-056:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-057:
   hostname: 192.168.1.57
   groups:
@@ -454,6 +566,8 @@ sw-acesso-057:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-058:
   hostname: 192.168.1.58
   groups:
@@ -462,6 +576,8 @@ sw-acesso-058:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-059:
   hostname: 192.168.1.59
   groups:
@@ -470,6 +586,8 @@ sw-acesso-059:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-060:
   hostname: 192.168.1.60
   groups:
@@ -478,6 +596,8 @@ sw-acesso-060:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-061:
   hostname: 192.168.1.61
   groups:
@@ -486,6 +606,8 @@ sw-acesso-061:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-062:
   hostname: 192.168.1.62
   groups:
@@ -494,6 +616,8 @@ sw-acesso-062:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-063:
   hostname: 192.168.1.63
   groups:
@@ -502,6 +626,8 @@ sw-acesso-063:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-064:
   hostname: 192.168.1.64
   groups:
@@ -510,6 +636,8 @@ sw-acesso-064:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-065:
   hostname: 192.168.1.65
   groups:
@@ -518,6 +646,8 @@ sw-acesso-065:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-066:
   hostname: 192.168.1.66
   groups:
@@ -526,6 +656,8 @@ sw-acesso-066:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-067:
   hostname: 192.168.1.67
   groups:
@@ -534,6 +666,8 @@ sw-acesso-067:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-068:
   hostname: 192.168.1.68
   groups:
@@ -542,6 +676,8 @@ sw-acesso-068:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-069:
   hostname: 192.168.1.69
   groups:
@@ -550,6 +686,8 @@ sw-acesso-069:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-070:
   hostname: 192.168.1.70
   groups:
@@ -558,6 +696,8 @@ sw-acesso-070:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-071:
   hostname: 192.168.1.71
   groups:
@@ -566,6 +706,8 @@ sw-acesso-071:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-072:
   hostname: 192.168.1.72
   groups:
@@ -574,6 +716,8 @@ sw-acesso-072:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-073:
   hostname: 192.168.1.73
   groups:
@@ -582,6 +726,8 @@ sw-acesso-073:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-074:
   hostname: 192.168.1.74
   groups:
@@ -590,6 +736,8 @@ sw-acesso-074:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-075:
   hostname: 192.168.1.75
   groups:
@@ -598,6 +746,8 @@ sw-acesso-075:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-076:
   hostname: 192.168.1.76
   groups:
@@ -606,6 +756,8 @@ sw-acesso-076:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-077:
   hostname: 192.168.1.77
   groups:
@@ -614,6 +766,8 @@ sw-acesso-077:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-078:
   hostname: 192.168.1.78
   groups:
@@ -622,6 +776,8 @@ sw-acesso-078:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-079:
   hostname: 192.168.1.79
   groups:
@@ -630,6 +786,8 @@ sw-acesso-079:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-080:
   hostname: 192.168.1.80
   groups:
@@ -638,6 +796,8 @@ sw-acesso-080:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-081:
   hostname: 192.168.1.81
   groups:
@@ -646,6 +806,8 @@ sw-acesso-081:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-082:
   hostname: 192.168.1.82
   groups:
@@ -654,6 +816,8 @@ sw-acesso-082:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-083:
   hostname: 192.168.1.83
   groups:
@@ -662,6 +826,8 @@ sw-acesso-083:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-084:
   hostname: 192.168.1.84
   groups:
@@ -670,6 +836,8 @@ sw-acesso-084:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-085:
   hostname: 192.168.1.85
   groups:
@@ -678,6 +846,8 @@ sw-acesso-085:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-086:
   hostname: 192.168.1.86
   groups:
@@ -686,6 +856,8 @@ sw-acesso-086:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-087:
   hostname: 192.168.1.87
   groups:
@@ -694,6 +866,8 @@ sw-acesso-087:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-088:
   hostname: 192.168.1.88
   groups:
@@ -702,6 +876,8 @@ sw-acesso-088:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-089:
   hostname: 192.168.1.89
   groups:
@@ -710,6 +886,8 @@ sw-acesso-089:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-090:
   hostname: 192.168.1.90
   groups:
@@ -718,6 +896,8 @@ sw-acesso-090:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-091:
   hostname: 192.168.1.91
   groups:
@@ -726,6 +906,8 @@ sw-acesso-091:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-092:
   hostname: 192.168.1.92
   groups:
@@ -734,6 +916,8 @@ sw-acesso-092:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-093:
   hostname: 192.168.1.93
   groups:
@@ -742,6 +926,8 @@ sw-acesso-093:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-094:
   hostname: 192.168.1.94
   groups:
@@ -750,6 +936,8 @@ sw-acesso-094:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-095:
   hostname: 192.168.1.95
   groups:
@@ -758,6 +946,8 @@ sw-acesso-095:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-096:
   hostname: 192.168.1.96
   groups:
@@ -766,6 +956,8 @@ sw-acesso-096:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-097:
   hostname: 192.168.1.97
   groups:
@@ -774,6 +966,8 @@ sw-acesso-097:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-098:
   hostname: 192.168.1.98
   groups:
@@ -782,6 +976,8 @@ sw-acesso-098:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-099:
   hostname: 192.168.1.99
   groups:
@@ -790,6 +986,8 @@ sw-acesso-099:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access
 sw-acesso-100:
   hostname: 192.168.1.100
   groups:
@@ -798,3 +996,5 @@ sw-acesso-100:
     interface: GigabitEthernet0/1
     vlan: 20
     setor: Operacional
+    telemetry_port: 50051
+    role: access

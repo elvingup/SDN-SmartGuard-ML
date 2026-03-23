@@ -4,5 +4,3 @@ switches_acesso:
     username: admin      # Centralizado para gestão de segurança
     password: password123
     port: 22
-    data:
-        vlan_padrao: 10   # Inteligência de grupo
