@@ -1,85 +1,130 @@
 import time
+import numpy as np
 import pandas as pd
 from nornir import InitNornir
 from sklearn.linear_model import LinearRegression
-# ... outras importações (nornir_scrapli, etc)
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
 
-# Inicialização do Nornir
+# =================================================================
+# PROJETO: SDN-SmartGuard-ML
+# COMPONENTE: Cérebro do Controlador (monitor_ia.py)
+# OBJETIVO: Automatizar a gestão de TICs e reduzir custos via IA
+# =================================================================
+
+# Inicialização do Nornir (O Orquestrador)
+# Justificativa: Permite interrogar os 100 switches simultaneamente utilizando o inventário.
 nr = InitNornir(config_file="topology/config.yaml")
 
-# --- FUNÇÃO 1: O COLETOR (Já existente no seu informe) ---
+# --- FUNÇÃO 1: COLETOR DE TELEMETRIA (STREAMING TELEMETRY) ---
 def coletar_telemetria_grpc(task):
     """
-    Tarefa para extrair métricas de bytes_sent e bytes_recv.
-    Justificativa: Usamos gRPC (Porta 50051) para baixa latência e 
-    formato binário eficiente (Protocol Buffers).
+    Objetivo: Extrair dados de performance via gRPC.
+    Justificativa: Diferente do SNMP, o streaming fornece dados em tempo 
+    real necessários para que o modelo de ML tenha alta precisão.
     """
-    # Em um cenário real de SDN, usaríamos bibliotecas como PyGNMI
-    # Aqui, simulamos a requisição de contadores de interface
-    comando = "show interfaces telemetry statistics" 
+    # Aqui entraria a lógica de conexão gRPC utilizando a telemetria_port (50051)
+    # Por fins de instrução, simulamos o retorno de bytes e pacotes
+    host_name = task.host.name
+    utilizacao_link = np.random.uniform(10, 95) # Simulação de carga (%)
+    pps = np.random.randint(50, 1000)           # Pacotes por segundo
+    ips_unicos = np.random.randint(1, 50)       # IPs de origem
     
-    # Execução do comando via Scrapli (alta performance)
-    resultado = task.run(task=send_command, command=comando)
-    
-    # O Parser converte o output bruto em dados estruturados para a IA
-    # Meta: Extrair bytes_sent e bytes_recv
-    return resultado.scrapli_response.genie_parse_output()
+    return {
+        "host": host_name,
+        "utilizacao": utilizacao_link,
+        "pps": pps,
+        "ips_unicos": ips_unicos
+    }
 
-# --- FUNÇÃO 2: O ANALISTA (A implementação técnica de ML) ---
+# --- FUNÇÃO 2: MODELO PREDITIVO (REGRESSÃO LINEAR) ---
 def treinar_modelo_preditivo(historico_dados):
     """
-    Justificativa: Esta função aplica a equação y = b0 + b1*x + e.
-    Ela transforma o histórico em uma linha de tendência.
+    Equação: y = beta_0 + beta_1*x + epsilon
+    Justificativa: Prever a saturação ANTES que ela ocorra permite 
+    o reencaminhamento de tráfego proativo, evitando paradas de rede.
     """
     df = pd.DataFrame(historico_dados)
-    if len(df) < 5: return None # Precisamos de massa crítica para treinar
+    if len(df) < 10: 
+        return None # Aguarda massa crítica de dados
     
+    # Feature: Tempo (x) | Target: Utilização (y)
     X = df[['timestamp']].values.reshape(-1, 1)
     y = df['utilizacao'].values
     
     modelo = LinearRegression()
     modelo.fit(X, y)
+    
     return modelo
 
-# --- FUNÇÃO 3: O MAESTRO (Sua pipeline_ia evoluída) ---
+# --- FUNÇÃO 3: DETECÇÃO DE ANOMALIAS (K-MEANS CLUSTERING) ---
+def detectar_anomalias_ddos(dados_trafego):
+    """
+    Objetivo: Identificar ataques DDoS ou comportamentos fora do padrão.
+    Justificativa: Aprendizado não supervisionado detecta ataques que
+    não possuem assinaturas conhecidas (Zero-day).
+    """
+    if len(dados_trafego) < 5:
+        return None, None
+
+    # Normalização: Essencial para algoritmos baseados em distância euclidiana
+    scaler = StandardScaler()
+    dados_norm = scaler.fit_transform(dados_trafego[['pps', 'ips_unicos']])
+    
+    # K=2 (0: Normal, 1: Anomalia/DDoS)
+    kmeans = KMeans(n_clusters=2, random_state=42, n_init=10)
+    clusters = kmeans.fit_predict(dados_norm)
+    
+    return clusters, kmeans
+
+# --- FUNÇÃO 4: O MAESTRO (PIPELINE_IA) ---
 def pipeline_ia():
-    print("[*] Iniciando Cérebro SDN - Módulo 3")
-    historico_global = [] # Buffer para armazenar os 'x' e 'y'
+    print(f"{'='*50}\n INICIANDO CÉREBRO SDN - OPERAÇÃO SENTINELA\n{'='*50}")
+    historico_global = []
     
     try:
         while True:
-            # AÇÃO 1: Coleta simultânea nos 100 ativos
+            # 1. Coleta Paralela em 100 ativos via Nornir
             resultados = nr.run(task=coletar_telemetria_grpc)
-            
-            # AÇÃO 2: Processamento e Armazenamento
             agora = time.time()
-            for host, res in resultados.items():
-                # Simulando a extração do valor de utilização do link
-                valor_utilizacao = 45 # Exemplo vindo do seu parser
-                historico_global.append({
-                    'timestamp': agora, 
-                    'utilizacao': valor_utilizacao,
-                    'host': host
-                })
+            dados_rodada = []
             
-            # AÇÃO 3: O Salto de Inteligência (Treinamento)
-            if len(historico_global) > 10:
-                modelo = treinar_modelo_preditivo(historico_global)
-                if modelo:
-                    # PREVISÃO: Onde estaremos daqui a 300 segundos (5 min)?
-                    futuro = np.array([[agora + 300]])
-                    predicao = modelo.predict(futuro)[0]
-                    
-                    print(f"[!] TENDÊNCIA: Utilização prevista em 5 min: {predicao:.2f}%")
-                    
-                    # LOGICA SDN: Se predicao > 80%, disparar alerta ou reencaminhar tráfego
-                    if predicao > 80:
-                        print("[ALERTA] Saturação iminente detectada! Reduzindo custos via gestão proativa.")
+            for host, response in resultados.items():
+                info = response.result
+                info['timestamp'] = agora
+                historico_global.append(info)
+                dados_rodada.append(info)
+            
+            # Manter buffer de histórico (últimas 100 amostras)
+            if len(historico_global) > 100:
+                historico_global.pop(0)
 
-            time.sleep(5) # Meta de intervalo de 5 segundos
+            # 2. Análise Preditiva (Olhando para o Futuro)
+            modelo_reg = treinar_modelo_preditivo(historico_global)
+            if modelo_reg:
+                # Previsão para daqui a 5 minutos (300s)
+                futuro = np.array([[agora + 300]])
+                predicao = modelo_reg.predict(futuro)[0]
+                print(f"[PREDIÇÃO] Saturação estimada em 5 min: {predicao:.2f}%")
+                
+                if predicao > 85:
+                    print("ALERTA: Risco de saturação iminente! Iniciando SDN Traffic Engineering.")
+
+            # 3. Detecção de Anomalias (Olhando para o Presente)
+            df_rodada = pd.DataFrame(dados_rodada)
+            clusters, _ = detectar_anomalias_ddos(df_rodada)
             
+            if clusters is not None:
+                for idx, cluster_id in enumerate(clusters):
+                    if cluster_id == 1: # Suposto comportamento anômalo
+                        host_anomalo = df_rodada.iloc[idx]['host']
+                        print(f"CRÍTICO: Anomalia detectada no host {host_anomalo}!")
+
+            print(f"[*] Ciclo concluído. Aguardando nova telemetria...\n")
+            time.sleep(5) # Intervalo de coleta
+
     except KeyboardInterrupt:
-        print("[*] Encerrando operações...")
+        print("\n[!] Encerrando controlador SDN. Operação desmobilizada.")
 
 if __name__ == "__main__":
     pipeline_ia()
