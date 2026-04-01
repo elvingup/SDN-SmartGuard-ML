@@ -6,3 +6,4 @@ venv/
 .env
 var.sh
 checkpoint.sh
+checkin.sh
