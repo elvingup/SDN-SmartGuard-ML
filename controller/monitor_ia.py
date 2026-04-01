@@ -5,12 +5,20 @@ from nornir import InitNornir
 from sklearn.linear_model import LinearRegression
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
+# Adicionadas as dependências do Prometheus para o Módulo 4
+from prometheus_client import start_http_server, Gauge
 
 # =================================================================
 # PROJETO: SDN-SmartGuard-ML
 # COMPONENTE: Cérebro do Controlador (monitor_ia.py)
 # OBJETIVO: Automatizar a gestão de TICs e reduzir custos via IA
 # =================================================================
+
+# --- DEFINIÇÃO DE MÉTRICAS (PROMETHEUS) ---
+# Gauge: Métrica que pode subir e descer (ideal para utilização e predição)
+UTILIZACAO_ATUAL = Gauge('sdn_utilizacao_link_percent', 'Utilização atual do link em %', ['host'])
+PREDICAO_SATURACAO = Gauge('sdn_predicao_saturacao_5min', 'Predição de saturação para os próximos 5 min', ['host'])
+STATUS_ANOMALIA = Gauge('sdn_anomalia_ddos_status', 'Status de anomalia (0=Normal, 1=Ataque)', ['host'])
 
 # Inicialização do Nornir (O Orquestrador)
 # Justificativa: Permite interrogar os 100 switches simultaneamente utilizando o inventário.
@@ -79,7 +87,12 @@ def detectar_anomalias_ddos(dados_trafego):
 
 # --- FUNÇÃO 4: O MAESTRO (PIPELINE_IA) ---
 def pipeline_ia():
-    print(f"{'='*50}\n INICIANDO CÉREBRO SDN - OPERAÇÃO SENTINELA\n{'='*50}")
+    print(f"{'='*50}\n INICIANDO CÉREBRO SDN - OPERAÇÃO SENTINELA E VISIBILIDADE\n{'='*50}")
+    
+    # Inicia o servidor de métricas na porta 8000
+    start_http_server(8000)
+    print("[+] Servidor de métricas Prometheus ativo na porta 8000")
+    
     historico_global = []
     
     try:
@@ -94,6 +107,9 @@ def pipeline_ia():
                 info['timestamp'] = agora
                 historico_global.append(info)
                 dados_rodada.append(info)
+                
+                # ATUALIZANDO MÉTRICAS NO EXPORTER (Utilização Atual)
+                UTILIZACAO_ATUAL.labels(host=host).set(info['utilizacao'])
             
             # Manter buffer de histórico (últimas 100 amostras)
             if len(historico_global) > 100:
@@ -107,6 +123,9 @@ def pipeline_ia():
                 predicao = modelo_reg.predict(futuro)[0]
                 print(f"[PREDIÇÃO] Saturação estimada em 5 min: {predicao:.2f}%")
                 
+                # ATUALIZANDO PREDIÇÃO NO EXPORTER (Usamos 'global' pois a predição atual engloba o link como um todo)
+                PREDICAO_SATURACAO.labels(host='global').set(predicao)
+                
                 if predicao > 85:
                     print("ALERTA: Risco de saturação iminente! Iniciando SDN Traffic Engineering.")
 
@@ -116,9 +135,13 @@ def pipeline_ia():
             
             if clusters is not None:
                 for idx, cluster_id in enumerate(clusters):
+                    host_atual = df_rodada.iloc[idx]['host']
+                    
+                    # ATUALIZANDO STATUS DE ANOMALIA NO EXPORTER
+                    STATUS_ANOMALIA.labels(host=host_atual).set(cluster_id)
+                    
                     if cluster_id == 1: # Suposto comportamento anômalo
-                        host_anomalo = df_rodada.iloc[idx]['host']
-                        print(f"CRÍTICO: Anomalia detectada no host {host_anomalo}!")
+                        print(f"CRÍTICO: Anomalia detectada no host {host_atual}!")
 
             print(f"[*] Ciclo concluído. Aguardando nova telemetria...\n")
             time.sleep(5) # Intervalo de coleta
