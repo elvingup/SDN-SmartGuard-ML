@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # O Cérebro: Controlador SDN com IA
+  sdn-controller:
+    build:
+      context: .
+      dockerfile: controller/Dockerfile
+    container_name: sdn_brain_ai
+    volumes:
+      - ./topology:/app/topology
+    ports:
+      - "8000:8000" # Prometheus Metrics
+    networks:
+      - sdn_network
+
+  # O Arquivista: Prometheus
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: sdn_prometheus
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - sdn_network
+
+  # O Painel de Comando: Grafana
+  grafana:
+    image: grafana/grafana:latest
+    container_name: sdn_grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - sdn_network
+
+networks:
+  sdn_network:
+    driver: bridge
